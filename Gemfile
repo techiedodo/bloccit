@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-
+# added per instruction on bloc
+gem 'bootstrap-sass'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
