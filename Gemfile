@@ -13,6 +13,7 @@ end
 
 group :development do
   gem 'sqlite3'
+  gem 'annotate'
 end
 
 # Use SCSS for stylesheets
