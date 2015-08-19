@@ -1,7 +1,7 @@
 require 'faker'
 
 #Create Posts
-50.times do
+=begin 50.times do
   Post.create!(
     title: Faker::Lorem.sentence,
     body: Faker::Lorem.paragraph
@@ -16,6 +16,16 @@ posts = Post.all
     body: Faker::Lorem.paragraph
   )
 end
+=end
+#Assignment 32; creation of unique posts
+post_attributes = [
+  {title: "Post created 1", body: "Body created 1"},
+  {title: "Post created 2", body: "Body created 2"},
+]
+
+post_attributes.each{|attributes|
+  Post.where(attributes).first_or_create
+}
 
 puts "Seed finished"
 puts "#{Post.count} posts created"
