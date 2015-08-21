@@ -5,6 +5,8 @@ gem 'bootstrap-sass'
 gem 'pry-rails'
 
 gem 'faker'
+
+gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use sqlite3 as the database for Active Record
