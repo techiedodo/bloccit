@@ -17,6 +17,14 @@ posts = Post.all
   )
 end
 
+#Create Questions
+10.times do
+  Question.create!(
+  title: Faker::Lorem.sentence,
+  body: Faker::Lorem.paragraph
+  )
+end
+
 puts "Seed finished"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
