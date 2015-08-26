@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 # added per instruction on bloc
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.3.1'
 
 gem 'pry-rails'
 
