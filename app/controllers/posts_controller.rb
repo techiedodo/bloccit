@@ -7,7 +7,9 @@ class PostsController < ApplicationController
    def show
      @topic = Topic.find(params[:topic_id])
      @post = Post.find(params[:id])
-     authorize @post
+     @comments = @post.comments
+     @comment = @post.comments.build
+     authorize @post #will this cause issue?
    end
 
    def new
@@ -28,7 +30,6 @@ class PostsController < ApplicationController
      @post.user = current_user
      @post.topic = @topic
      authorize @post
-
      if @post.save
        flash[:notice] = "Post was saved."
        redirect_to [@topic, @post]
