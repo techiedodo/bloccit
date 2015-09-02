@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])
     @comments = @post.comments
-    @comment = @post.comments.build
+    @comment = Comment.new
     authorize @post #will this cause issue?
   end
 
@@ -66,7 +66,7 @@ class PostsController < ApplicationController
        render :show
      end
    end
-   
+
 end
 
 
