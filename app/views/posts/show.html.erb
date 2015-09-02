@@ -6,7 +6,8 @@
       <%= image_tag(@post.user.avatar.tiny.url) if @post.user.avatar? %>
       submitted <%= time_ago_in_words(@post.created_at) %> ago by
       <%= @post.user.name %>
-    </small>    <p><%= markdown_to_html @post.body %></p>
+    </small>
+    <p><%= markdown_to_html @post.body %></p>
   </div>
   <div class="col-md-4">
     <%if @post.image? %>
@@ -16,6 +17,10 @@
     <% end %>
     <% if policy(@post).edit? %>
     <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
+    <% end %>
+
+    <% if policy(@post).edit? %>
+    <%= link_to "Delete Post", [@topic, @post], method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete post?'} %>
     <% end %>
   </div>
 </div>
