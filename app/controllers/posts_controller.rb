@@ -16,6 +16,7 @@ class PostsController < ApplicationController
      @topic = Topic.find(params[:topic_id])
      @post = Post.new
      authorize @post
+     authorize @comment
    end
 
    def edit
@@ -30,6 +31,7 @@ class PostsController < ApplicationController
      @post.user = current_user
      @post.topic = @topic
      authorize @post
+     authorize @comment
      if @post.save
        flash[:notice] = "Post was saved."
        redirect_to [@topic, @post]
