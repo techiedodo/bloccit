@@ -9,7 +9,8 @@ describe Vote do
         expect(v2.valid?).to eq(true)
 
         bad_v = Vote.new(value: 2)
-        expect(bad_v.valid?).to eq(false)      end
+        expect(bad_v.valid?).to eq(false)
+      end
     end
   end
 end
