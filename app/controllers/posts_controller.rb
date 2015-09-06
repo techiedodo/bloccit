@@ -1,9 +1,4 @@
 class PostsController < ApplicationController
-  #def index
-  #  @posts = Post.all
-  #  authorize @posts
-  #end
-
   def show
     @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])
@@ -30,7 +25,7 @@ class PostsController < ApplicationController
     @post.user = current_user
     @post.topic = @topic
     authorize @post
-    if @post.save
+    if @post.create_vote
       flash[:notice] = "Post was saved."
       redirect_to [@topic, @post]
     else
@@ -66,7 +61,6 @@ class PostsController < ApplicationController
        render :show
      end
    end
-
 end
 
 
