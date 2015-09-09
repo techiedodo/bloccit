@@ -20,6 +20,8 @@ gem 'mini_magick'
 
 gem 'fog'
 
+gem 'capybara'
+
 gem 'will_paginate', '~> 3.0.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
