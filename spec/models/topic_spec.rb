@@ -1,11 +1,23 @@
+# == Schema Information
+#
+# Table name: topics
+#
+#  id          :integer          not null, primary key
+#  name        :string
+#  public      :boolean          default(TRUE)
+#  description :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 require 'rails_helper'
 
 describe Topic do
   describe "scopes" do
 
     before do
-      @public_topic = Topic.create # default is public
-      @private_topic = Topic.create(public: false)
+      @public_topic = Topic.create(name: "Topic name") # default is public
+      @private_topic = Topic.create(name: "Topic name", public: false)
     end
 
     describe "publicly_viewable" do
@@ -28,8 +40,8 @@ describe Topic do
       end
 
       it "returns only public topics if user is nil" do
-        user = false
-        expect(Topic.visible_to).to eq( [@public_topic])
+        # user = false
+        expect(Topic.visible_to(nil)).to eq( [@public_topic])
       end
     end
   end
