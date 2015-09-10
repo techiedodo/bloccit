@@ -19,4 +19,7 @@ module TestFactories
     user.save
     user
   end
+
+  include Warden::Test::Helpers
+  Warden.test_mode!
 end
