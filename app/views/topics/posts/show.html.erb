@@ -39,7 +39,7 @@
 <div class="row">
   <h2>Comment</h2>
   <div class="col-md-12">
-    <%= render @comments %>
+    <%= render partial: 'comments/comment', collection: @comments %>
     <%= render 'comments/form', topic: @topic, comment: @comment, post: @post %>
   </div>
 </div>
